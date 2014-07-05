@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.slf4j.LoggerFactory;
 
 public class App {
 
@@ -45,5 +46,6 @@ public class App {
         for (Map.Entry<String, ReferenceTopK<String>> entry : properties.entrySet()) {
             System.out.format("%s: %s%n", entry.getKey(), entry.getValue());
         }
+        LoggerFactory.getLogger(App.class).error("roooo error");
     }
 }

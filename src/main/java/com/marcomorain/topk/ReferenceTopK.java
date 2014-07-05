@@ -6,7 +6,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 
-
 public class ReferenceTopK<T> implements TopK<T> {
 
     private final Multiset<T> counters;

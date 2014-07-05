@@ -14,7 +14,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        Map<String, TopK> properties = Maps.newHashMap();
+        Map<String, ReferenceTopK<String>> properties = Maps.newHashMap();
         final int k = 15;
 
         try {
@@ -33,7 +33,7 @@ public class App {
                 Set<String> keys = attributes.keySet();
                 for (String key : keys) {
                     if (!properties.containsKey(key)) {
-                        properties.put(key, new TopK(k));
+                        properties.put(key, new ReferenceTopK<String>(k));
                     }
                     properties.get(key).add(attributes.getString(key));
                 }
@@ -42,7 +42,7 @@ public class App {
             System.out.format("Error: %s%n", e);
         }
 
-        for (Map.Entry<String, TopK> entry : properties.entrySet()) {
+        for (Map.Entry<String, ReferenceTopK<String>> entry : properties.entrySet()) {
             System.out.format("%s: %s%n", entry.getKey(), entry.getValue());
         }
     }
